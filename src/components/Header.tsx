@@ -14,7 +14,7 @@ export default function Header() {
   };
 
   return (
-    <header className="max-w-7xl mx-auto mt-4 mb-4 bg-[color:var(--bg-primary)] border border-[color:var(--border-color-extra)] rounded-md text-[color:var(--text-primary)] flex flex-col sm:flex-row gap-2.5 sm:gap-0 justify-between items-center px-2 py-2.5 lg:px-4 lg:py-4">
+    <header className="max-w-7xl mx-auto mt-4 mb-4 bg-[color:var(--bg-primary)] border border-[color:var(--border-color-extra)] rounded-md text-[color:var(--text-primary)] flex flex-col sm:flex-row gap-2.5 sm:gap-0 justify-between items-center px-2 py-2.5 lg:px-4 lg:py-4 font-nav">
       <span className="text-base font-medium">
         <Link href="/" className="p-2.5 hover:bg-[color:var(--bg-secondary)] rounded-md transition-colors">
           Gabriel Lemes

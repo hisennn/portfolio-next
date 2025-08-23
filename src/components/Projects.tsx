@@ -7,12 +7,14 @@ const texts = {
   pt: {
     title: 'Projetos',
     coord: 'Coordinates Saver para Minecraft – uma ferramenta para gerenciar coordenadas, similar a uma lista de tarefas.',
-    ascii: 'Conversor de texto e imagem para ASCII.'
+    ascii: 'Conversor de texto e imagem para ASCII.',
+    baltre: 'Criei o site institucional da empresa americana Baltimore Re-Construction com Squarespace, mantendo o design funcional mesmo com as limitações da plataforma.'
   },
   en: {
     title: 'Projects',
     coord: 'Coordinates Saver for Minecraft – a tool to manage coordinates, similar to a TODO list.',
-    ascii: 'Text and image converter to ASCII.'
+    ascii: 'Text and image converter to ASCII.',
+    baltre: 'I built the institutional website for the American company Baltimore Re-Construction using Squarespace, keeping the design functional despite the platform’s limitations.'
   }
 } as const;
 
@@ -93,7 +95,7 @@ export default function Projects() {
     <>
       <div className="flex flex-col gap-2.5 pb-5 border-b border-[color:var(--border-color-extra)] mb-5">
         <div className="flex gap-2 items-center mb-2">
-          <h2 className="text-2xl xl:text-3xl font-semibold text-[color:var(--text-title)]">{texts[lang].title}</h2>
+          <h2 className="text-2xl xl:text-3xl font-semibold text-[color:var(--text-title)] font-title">{texts[lang].title}</h2>
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             className="h-6 w-6 mt-[2px]"
@@ -120,9 +122,9 @@ export default function Projects() {
           >
             Coordinates Saver
           </a>
-          <div className="flex flex-col gap-1 text-sm text-[color:var(--text-secondary)] leading-tight">
+          <div className="flex flex-col gap-1.5 text-sm text-[color:var(--text-secondary)] leading-tight">
             <span>{texts[lang].coord}</span>
-            <span>HTML, CSS, JS</span>
+            <span className="font-bold">HTML, CSS, JS</span>
           </div>
         </div>
         
@@ -136,9 +138,25 @@ export default function Projects() {
           >
             ASCII converter
           </a>
-          <div className="flex flex-col gap-1 text-sm text-[color:var(--text-secondary)] leading-tight">
+          <div className="flex flex-col gap-1.5 text-sm text-[color:var(--text-secondary)] leading-tight">
             <span>{texts[lang].ascii}</span>
-            <span>HTML, CSS, JS</span>
+            <span className="font-bold">HTML, CSS, JS</span>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-1.5 p-2.5 border border-[color:var(--bg-secondary)] rounded-md">
+          <a 
+            href="https://baltimorereconstruction.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="project-preview text-lg lg:text-xl leading-tight text-[color:var(--accent-blue)] underline w-fit hover:brightness-140 transition-all"
+            data-tooltip-img="/images/baltre.jpg"
+          >
+            Baltimore Re-Construction
+          </a>
+          <div className="flex flex-col gap-1.5 text-sm text-[color:var(--text-secondary)] leading-tight">
+            <span>{texts[lang].baltre}</span>
+            <span className="font-bold">Squarespace, HTML, CSS</span>
           </div>
         </div>
       </div>

@@ -68,7 +68,7 @@ export default function Education() {
     <>
       <div className="flex flex-col gap-2.5 pb-5 border-b border-[color:var(--border-color-extra)] mb-5">
         <div className="flex gap-2 items-center mb-2">
-          <h2 className="text-2xl xl:text-3xl font-semibold text-[color:var(--text-title)]">{texts[lang].title}</h2>
+          <h2 className="text-2xl xl:text-3xl font-semibold text-[color:var(--text-title)] font-title">{texts[lang].title}</h2>
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             className="h-6 w-6 mt-[2px]"

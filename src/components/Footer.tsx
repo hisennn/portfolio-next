@@ -31,7 +31,7 @@ export default function Footer() {
   return (
     <footer className="max-w-7xl mx-auto px-4 py-4 lg:py-6 lg:px-4 border bg-[var(--bg-primary)] border-[color:var(--border-color-extra)] rounded-sm mt-6 mb-4">
       <div className="flex flex-col items-start gap-2">
-        <h2 className="text-2xl lg:text-3xl font-bold text-[color:var(--text-title)] mb-1 pb-2 border-b border-[color:var(--border-color)]">
+        <h2 className="text-2xl lg:text-3xl font-bold text-[color:var(--text-title)] mb-1 pb-2 border-b border-[color:var(--border-color)] font-title">
           {texts[lang].name}
         </h2>
         <div className="flex flex-col gap-0.5 text-lg lg:text-xl text-[color:var(--text-primary)]">

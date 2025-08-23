@@ -85,7 +85,7 @@ export default function Skills() {
   return (
     <div className="flex flex-col gap-2.5 pb-5 border-b border-[color:var(--border-color-extra)] mb-5" ref={skillsContainerRef}>
       <div className="flex gap-2 items-center mb-2">
-        <h2 className="text-2xl xl:text-3xl font-semibold text-[color:var(--text-title)]">{texts[lang].title}</h2>
+        <h2 className="text-2xl xl:text-3xl font-semibold text-[color:var(--text-title)] font-title">{texts[lang].title}</h2>
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           className="h-6 w-6 mt-[2px]"
@@ -127,12 +127,6 @@ export default function Skills() {
         <ul className="skills-items flex gap-3 flex-wrap text-4xl lg:text-5xl list-none py-2.5 mt-1.5 justify-start">
           <li className="transition-transform duration-300 ease-in-out hover:scale-125 px-1 first:pl-0">
             <i title="JavaScript" className="devicon-javascript-plain block transition-filter duration-200 ease-in-out"></i>
-          </li>
-          <li className="transition-transform duration-300 ease-in-out hover:scale-125 px-1 first:pl-0">
-            <i title="Ruby" className="devicon-ruby-plain-wordmark block transition-filter duration-200 ease-in-out"></i>
-          </li>
-          <li className="transition-transform duration-300 ease-in-out hover:scale-125 px-1 first:pl-0">
-            <i title="Rails" className="devicon-rails-plain-wordmark block transition-filter duration-200 ease-in-out"></i>
           </li>
           <li className="transition-transform duration-300 ease-in-out hover:scale-125 px-1 first:pl-0">
             <i title="React" className="devicon-react-original-wordmark block transition-filter duration-200 ease-in-out"></i>

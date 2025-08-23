@@ -65,6 +65,16 @@
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+/* Classe para títulos que usam Poppins */
+.font-title {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Classe para navegação que usa Poppins */
+.font-nav {
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 

@@ -28,8 +28,8 @@ export default function Home() {
       />
       <Header />
       
-      <main className="max-w-7xl mx-auto py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_6fr] gap-10 lg:grid">
+      <main className="max-w-7xl mx-auto py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_6fr] gap-12 lg:grid">
           <Profile />
           
           <section className="flex flex-col gap-2 p-5 lg:p-10 lg:pb-8  bg-[var(--bg-primary)] text-[color:var(--text-primary)] border border-[color:var(--border-color-extra)] rounded-md">

@@ -7,11 +7,19 @@ import Image from 'next/image';
 const texts = {
   pt: {
     name: 'Gabriel Lemes',
-    description: 'Estudante de Desenvolvimento Web\nAprendendo Ruby on Rails.'
+    description: 'Estudante de Web Dev\nAprendendo Next.js.',
+    location: 'São Paulo, Brasil',
+    phone: '+55 (16) 9 9390-9231',
+    email: 'gabrielsilvarz@outlook.com',
+    downloadResume: 'Baixar Currículo'
   },
   en: {
     name: 'Gabriel Lemes',
-    description: 'Web Development Student\nLearning Ruby on Rails.'
+    description: 'Web Dev Student\nLearning Next.js.',
+    location: 'São Paulo, Brazil',
+    phone: '+55 (16) 9 9390-9231',
+    email: 'gabrielsilvarz@outlook.com',
+    downloadResume: 'Download Resume'
   }
 } as const;
 
@@ -31,7 +39,7 @@ export default function Profile() {
           height={200}
           className="rounded-full self-center object-cover border border-[color:var(--border-color)] shadow-md max-w-[150px] md:max-w-[200px] lg:max-w-[200px] mx-auto lg:mx-0"
         />
-        <h1 className="text-lg lg:text-xl font-bold text-center lg:text-left text-[color:var(--text-title)] mt-4">{texts[lang].name}</h1>
+        <h1 className="text-lg lg:text-xl font-bold text-center lg:text-left text-[color:var(--text-title)] mt-4 font-title">{texts[lang].name}</h1>
       </div>
       <div className="flex flex-col">
         <p className="text-sm lg:text-base text-[color:var(--text-primary)] text-center lg:text-left leading-tight">
@@ -91,7 +99,7 @@ export default function Profile() {
             <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          <span className="text-base lg:text-lg">São Paulo, Brasil</span>
+          <span className="text-base lg:text-lg">{texts[lang].location}</span>
         </li>
         <li className="flex items-center gap-2">
           <svg 
@@ -107,7 +115,7 @@ export default function Profile() {
           >
             <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
           </svg>
-          <span className="text-base lg:text-lg">+55 (16) 9 9390-9231</span>
+          <span className="text-base lg:text-lg">{texts[lang].phone}</span>
         </li>
         <li className="flex items-center gap-2">
           <svg 
@@ -128,7 +136,7 @@ export default function Profile() {
             href="mailto:gabrielsilvarz@outlook.com" 
             target="_blank" 
           >
-            gabrielsilvarz@outlook.com
+            {texts[lang].email}
           </a>
         </li>
         <li className="flex items-center gap-2">
@@ -151,7 +159,7 @@ export default function Profile() {
             href="#" 
             download="Gabriel_Lemes_Resume.pdf"
           >
-            Download Resume
+            {texts[lang].downloadResume}
           </a>
         </li>
       </ul>
