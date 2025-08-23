@@ -156,8 +156,10 @@ export default function Profile() {
             <path d="m7 10 5 5 5-5" />
           </svg>
           <a className="text-[color:var(--accent-blue)] font-medium flex items-center gap-1 hover:underline underline-offset-2 text-base lg:text-lg" 
-            href="#" 
-            download="Gabriel_Lemes_Resume.pdf"
+            href="/gabriel_curriculo.pdf" 
+            download="Gabriel Lemes Currículo.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {texts[lang].downloadResume}
           </a>
