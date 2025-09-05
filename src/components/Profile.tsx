@@ -7,7 +7,7 @@ import Image from 'next/image';
 const texts = {
   pt: {
     name: 'Gabriel Lemes',
-    description: 'Estudante de Web Dev\nAprendendo Next.js.',
+    description: 'Web Dev\nAprendendo Next.js.',
     location: 'São Paulo, Brasil',
     phone: '+55 (16) 9 9390-9231',
     email: 'gabrielsilvarz@outlook.com',
@@ -15,7 +15,7 @@ const texts = {
   },
   en: {
     name: 'Gabriel Lemes',
-    description: 'Web Dev Student\nLearning Next.js.',
+    description: 'Web Dev\nLearning Next.js.',
     location: 'São Paulo, Brazil',
     phone: '+55 (16) 9 9390-9231',
     email: 'gabrielsilvarz@outlook.com',
@@ -51,11 +51,11 @@ export default function Profile() {
           ))}
         </p>
       </div>
-      
+
       <div className="flex gap-2 mb-2 justify-center lg:justify-start">
-        <a 
-          href="https://www.linkedin.com/in/gabrieldslemes/" 
-          target="_blank" 
+        <a
+          href="https://www.linkedin.com/in/gabrieldslemes/"
+          target="_blank"
           rel="noopener noreferrer"
           className="text-[color:var(--accent-blue)] font-medium flex items-center gap-1"
         >
@@ -67,9 +67,9 @@ export default function Profile() {
             className="inline-block hover:brightness-110 hover:scale-105 transition-all duration-300"
           />
         </a>
-        <a 
-          href="https://github.com/Hisennn" 
-          target="_blank" 
+        <a
+          href="https://github.com/Hisennn"
+          target="_blank"
           rel="noopener noreferrer"
           className="text-[color:var(--accent-blue)] font-medium flex items-center gap-1"
         >
@@ -82,18 +82,18 @@ export default function Profile() {
           />
         </a>
       </div>
-      
+
       <ul className="flex flex-col border-t font-inter border-[color:var(--border-color-extra)] pt-4 gap-1 items-center lg:items-start">
         <li className="flex items-center gap-2">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="18" 
-            height="18" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="#7d8590" 
-            strokeWidth="1.5" 
-            strokeLinecap="round" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#7d8590"
+            strokeWidth="1.5"
+            strokeLinecap="round"
             strokeLinejoin="round"
           >
             <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
@@ -102,15 +102,15 @@ export default function Profile() {
           <span className="text-base lg:text-lg">{texts[lang].location}</span>
         </li>
         <li className="flex items-center gap-2">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="18" 
-            height="18" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="#7d8590" 
-            strokeWidth="1.5" 
-            strokeLinecap="round" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#7d8590"
+            strokeWidth="1.5"
+            strokeLinecap="round"
             strokeLinejoin="round"
           >
             <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
@@ -118,45 +118,45 @@ export default function Profile() {
           <span className="text-base lg:text-lg">{texts[lang].phone}</span>
         </li>
         <li className="flex items-center gap-2">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="18" 
-            height="18" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="#7d8590" 
-            strokeWidth="1.5" 
-            strokeLinecap="round" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#7d8590"
+            strokeWidth="1.5"
+            strokeLinecap="round"
             strokeLinejoin="round"
           >
             <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
             <rect x="2" y="4" width="20" height="16" rx="2" />
           </svg>
-          <a className="text-[color:var(--accent-blue)] font-medium flex items-center gap-1 hover:underline underline-offset-2 text-base lg:text-lg" 
-            href="mailto:gabrielsilvarz@outlook.com" 
-            target="_blank" 
+          <a className="text-[color:var(--accent-blue)] font-medium flex items-center gap-1 hover:underline underline-offset-2 text-base lg:text-lg"
+            href="mailto:gabrielsilvarz@outlook.com"
+            target="_blank"
           >
             {texts[lang].email}
           </a>
         </li>
         <li className="flex items-center gap-2">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="18" 
-            height="18" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="#7d8590" 
-            strokeWidth="1.5" 
-            strokeLinecap="round" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#7d8590"
+            strokeWidth="1.5"
+            strokeLinecap="round"
             strokeLinejoin="round"
           >
             <path d="M12 15V3" />
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
             <path d="m7 10 5 5 5-5" />
           </svg>
-          <a className="text-[color:var(--accent-blue)] font-medium flex items-center gap-1 hover:underline underline-offset-2 text-base lg:text-lg" 
-            href="/gabriel_curriculo.pdf" 
+          <a className="text-[color:var(--accent-blue)] font-medium flex items-center gap-1 hover:underline underline-offset-2 text-base lg:text-lg"
+            href="/gabriel_curriculo.pdf"
             download="Gabriel Lemes Currículo.pdf"
             target="_blank"
             rel="noopener noreferrer"
