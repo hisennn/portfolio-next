@@ -34,7 +34,7 @@ export default function Footer() {
         <h2 className="text-2xl lg:text-3xl font-bold text-[color:var(--text-title)] mb-1 pb-2 border-b border-[color:var(--border-color)] font-title">
           {texts[lang].name}
         </h2>
-        <div className="flex flex-col gap-0.5 text-lg lg:text-xl text-[color:var(--text-primary)]">
+        <div className="flex flex-col gap-0.5 text-lg text-[color:var(--text-primary)]">
           <div>{texts[lang].phone}</div>
           <div>{texts[lang].email}</div>
           <div>
