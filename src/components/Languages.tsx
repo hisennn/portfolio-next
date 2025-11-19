@@ -2,6 +2,7 @@
 
 import { useContext } from 'react';
 import { LanguageContext } from '../contexts/LanguageContext';
+import { Translate } from '@phosphor-icons/react';
 
 const texts = {
   pt: {
@@ -29,26 +30,10 @@ export default function Languages() {
   const lang = (['pt', 'en'].includes(language) ? language : 'pt') as Lang;
 
   return (
-    <div className="flex flex-col gap-2.5 pb-0 mb-2">
+    <div className="flex flex-col gap-2.5 p-6 bg-[color:var(--bg-secondary)] rounded-lg mb-4">
       <div className="flex gap-2 items-center mb-2">
         <h2 className="text-2xl xl:text-3xl font-semibold text-[color:var(--text-title)] font-title">{texts[lang].title}</h2>
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-6 w-6 mt-[2px]"
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="#7d8590" 
-          strokeWidth="1.5" 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-        >
-          <path d="m5 8 6 6"/>
-          <path d="m4 14 6-6 2-3"/>
-          <path d="M2 5h12"/>
-          <path d="M7 2h1"/>
-          <path d="m22 22-5-10-5 10"/>
-          <path d="M14 18h6"/>
-        </svg>
+        <Translate size={24} weight="light" className="text-[color:var(--accent-highlight)] mt-[2px]" />
       </div>
       <ul className="flex flex-col leading-tight leading- gap-0.5 lg:gap-2 text-base lg:text-lg">
         <li>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useContext } from 'react';
 import { LanguageContext } from '../contexts/LanguageContext';
+import { TerminalWindow } from '@phosphor-icons/react';
 
 const texts = {
   pt: {
@@ -83,26 +84,14 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-2.5 pb-5 border-b border-[color:var(--border-color-extra)] mb-5" ref={skillsContainerRef}>
+    <div className="flex flex-col gap-6 p-6 bg-[color:var(--bg-secondary)] rounded-lg mb-4" ref={skillsContainerRef}>
       <div className="flex gap-2 items-center mb-2">
         <h2 className="text-2xl xl:text-3xl font-semibold text-[color:var(--text-title)] font-title">{texts[lang].title}</h2>
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-6 w-6 mt-[2px]"
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="#7d8590" 
-          strokeWidth="1.5" 
-          strokeLinecap="round" 
-          strokeLinejoin="round"
-        >
-          <path d="m16 18 6-6-6-6" />
-          <path d="m8 6-6 6 6 6" />
-        </svg>
+        <TerminalWindow size={24} weight="light" className="text-[color:var(--accent-highlight)] mt-[2px]" />
       </div>
       
       <div className="flex flex-col gap-1 mt-1.5 ml-1">
-        <div className="text-[color:var(--border-color)] text-sm font-medium pb-0.5 border-b border-[color:var(--bg-secondary)]">{texts[lang].intermediate}</div>
+        <div className="text-[color:var(--text-dest)] text-sm font-medium pb-0.5 border-b border-[color:var(--border-color-extra)]">{texts[lang].intermediate}</div>
         <ul className="skills-items flex gap-3 flex-wrap text-4xl lg:text-5xl list-none py-2.5 mt-1.5 justify-start">
           <li className="transition-transform duration-300 ease-in-out hover:scale-125 px-1 first:pl-0">
             <i title="HTML5" className="devicon-html5-plain-wordmark block transition-filter duration-200 ease-in-out"></i>
@@ -123,7 +112,7 @@ export default function Skills() {
       </div>
 
       <div className="flex flex-col gap-1 mt-1.5 ml-1">
-        <div className="text-[color:var(--border-color)] text-sm font-medium pb-0.5 border-b border-[color:var(--bg-secondary)]">{texts[lang].basic}</div>
+        <div className="text-[color:var(--text-dest)] text-sm font-medium pb-0.5 border-b border-[color:var(--border-color-extra)]">{texts[lang].basic}</div>
         <ul className="skills-items flex gap-3 flex-wrap text-4xl lg:text-5xl list-none py-2.5 mt-1.5 justify-start">
           <li className="transition-transform duration-300 ease-in-out hover:scale-125 px-1 first:pl-0">
             <i title="JavaScript" className="devicon-javascript-plain block transition-filter duration-200 ease-in-out"></i>

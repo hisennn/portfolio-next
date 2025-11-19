@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useContext } from 'react';
 import { LanguageContext } from '../contexts/LanguageContext';
+import { Folder } from '@phosphor-icons/react';
 
 const texts = {
   pt: {
@@ -93,70 +94,57 @@ export default function Projects() {
 
   return (
     <>
-      <div className="flex flex-col gap-2.5 pb-5 border-b border-[color:var(--border-color-extra)] mb-5">
+      <div className="flex flex-col gap-6 p-6 bg-[color:var(--bg-secondary)] rounded-lg mb-4">
         <div className="flex gap-2 items-center mb-2">
           <h2 className="text-2xl xl:text-3xl font-semibold text-[color:var(--text-title)] font-title">{texts[lang].title}</h2>
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="h-6 w-6 mt-[2px]"
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="#7d8590" 
-            strokeWidth="1.5" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          >
-            <path d="M10 10.5 8 13l2 2.5" />
-            <path d="m14 10.5 2 2.5-2 2.5" />
-            <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z" />
-          </svg>
+          <Folder size={24} weight="light" className="text-[color:var(--accent-highlight)] mt-[2px]" />
         </div>
         
-        <div className="flex flex-col gap-1.5 p-2.5 border border-[color:var(--bg-secondary)] rounded-md">
+        <div className="flex flex-col gap-1.5">
           <a 
             href="https://mc-coordinate-saver.vercel.app/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="project-preview text-lg lg:text-xl leading-tight text-[color:var(--accent-blue)] underline w-fit hover:brightness-140 transition-all"
+            className="project-preview text-lg lg:text-xl font-medium leading-tight text-[color:var(--text-title)] w-fit hover:text-[color:var(--accent-blue)] transition-colors"
             data-tooltip-img="/images/coord-sv.jpg"
           >
             Coordinates Saver
           </a>
-          <div className="flex flex-col gap-1.5 text-sm text-[color:var(--text-secondary)] leading-tight">
+          <div className="flex flex-col gap-1.5 text-[15px] text-[color:var(--text-secondary)] leading-snug">
             <span>{texts[lang].coord}</span>
-            <span className="font-bold">HTML, CSS, JS</span>
+            <span className="font-mono text-xs font-medium text-[color:var(--text-dest)]">HTML, CSS, JS</span>
           </div>
         </div>
         
-        <div className="flex flex-col gap-1.5 p-2.5 border border-[color:var(--bg-secondary)] rounded-md">
+        <div className="flex flex-col gap-1.5">
           <a 
             href="https://ascii-converter.vercel.app/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="project-preview text-lg lg:text-xl leading-tight text-[color:var(--accent-blue)] underline w-fit hover:brightness-140 transition-all"
+            className="project-preview text-lg lg:text-xl font-medium leading-tight text-[color:var(--text-title)] w-fit hover:text-[color:var(--accent-blue)] transition-colors"
             data-tooltip-img="/images/ascii.jpg"
           >
             ASCII converter
           </a>
-          <div className="flex flex-col gap-1.5 text-sm text-[color:var(--text-secondary)] leading-tight">
+          <div className="flex flex-col gap-1.5 text-[15px] text-[color:var(--text-secondary)] leading-snug">
             <span>{texts[lang].ascii}</span>
-            <span className="font-bold">HTML, CSS, JS</span>
+            <span className="font-mono text-xs font-medium text-[color:var(--text-dest)]">HTML, CSS, JS</span>
           </div>
         </div>
 
-        <div className="flex flex-col gap-1.5 p-2.5 border border-[color:var(--bg-secondary)] rounded-md">
+        <div className="flex flex-col gap-1.5">
           <a 
             href="https://baltimorereconstruction.com/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="project-preview text-lg lg:text-xl leading-tight text-[color:var(--accent-blue)] underline w-fit hover:brightness-140 transition-all"
+            className="project-preview text-lg lg:text-xl font-medium leading-tight text-[color:var(--text-title)] w-fit hover:text-[color:var(--accent-blue)] transition-colors"
             data-tooltip-img="/images/baltre.jpg"
           >
             Baltimore Re-Construction
           </a>
-          <div className="flex flex-col gap-1.5 text-sm text-[color:var(--text-secondary)] leading-tight">
+          <div className="flex flex-col gap-1.5 text-[15px] text-[color:var(--text-secondary)] leading-snug">
             <span>{texts[lang].baltre}</span>
-            <span className="font-bold">Squarespace, HTML, CSS</span>
+            <span className="font-mono text-xs font-medium text-[color:var(--text-dest)]">Squarespace, HTML, CSS</span>
           </div>
         </div>
       </div>

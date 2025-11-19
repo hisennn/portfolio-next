@@ -3,54 +3,55 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --bg-header: #f5f5f5;
+  --bg-header: rgba(255, 255, 255, 0.8);
   --bg-primary: #ffffff;
-  --bg-secondary: #e0e0e0;
-  --text-title: #1a1a1a;
-  --text-primary: #333333;
-  --text-dest: #4a4a4a;
-  --text-extra: #555555;
-  --text-secondary: #5b616d;
-  --accent-blue: #1d4ed8;
-  --border-color: #a5aaaf;
-  --border-color-extra: #d9dfe6;
+  --bg-secondary: #f4f4f5;
+  --text-title: #09090b;
+  --text-primary: #27272a;
+  --text-dest: #3f3f46;
+  --text-extra: #52525b;
+  --text-secondary: #71717a;
+  --accent-blue: #2563eb;
+  --border-color: #e4e4e7;
+  --border-color-extra: #f4f4f5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-poppins: var(--font-poppins);
   --font-inter: var(--font-inter);
 }
 
 /* Tema escuro */
 [data-theme="dark"] {
-  --bg-header: #020405;
-  --bg-primary: #0a0e14;
-  --bg-secondary: #161b22;
-  --text-title: #edf2f7;
-  --text-primary: #d6dde4;
-  --text-dest: #c3cad1;
-  --text-extra: #c5ccd1;
-  --text-secondary: #979da7;
-  --accent-blue: #2a73d3;
-  --border-color: #565e68;
-  --border-color-extra: #30363d;
+  --bg-header: rgba(10, 10, 10, 0.8);
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #0f0f0f;
+  --text-title: #ffffff;
+  --text-primary: #e4e4e7;
+  --text-dest: #d4d4d8;
+  --text-extra: #a1a1aa;
+  --text-secondary: #a1a1aa;
+  --accent-blue: #3b82f6;
+  --accent-highlight: #a5b4fc;
+  --border-color: #27272a;
+  --border-color-extra: #18181b;
 }
 
 /* Tema claro */
 [data-theme="light"] {
-  --bg-header: #f5f5f5;
+  --bg-header: rgba(255, 255, 255, 0.8);
   --bg-primary: #ffffff;
-  --bg-secondary: #e0e0e0;
-  --text-title: #1a1a1a;
-  --text-primary: #333333;
-  --text-dest: #4a4a4a;
-  --text-extra: #555555;
-  --text-secondary: #5b616d;
-  --accent-blue: #1d4ed8;
-  --border-color: #a5aaaf;
-  --border-color-extra: #d9dfe6;
+  --bg-secondary: #f8f8f8;
+  --text-title: #09090b;
+  --text-primary: #27272a;
+  --text-dest: #3f3f46;
+  --text-extra: #52525b;
+  --text-secondary: #71717a;
+  --accent-blue: #2563eb;
+  --accent-highlight: #6366f1;
+  --border-color: #e4e4e7;
+  --border-color-extra: #f4f4f5;
 }
 
 /* Estilos para spotlight nas skills */
@@ -66,16 +67,18 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Classe para títulos que usam Poppins */
+/* Classe para títulos que usam Inter (clean/consistent) */
 .font-title {
-  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
-/* Classe para navegação que usa Poppins */
+/* Classe para navegação que usa Inter */
 .font-nav {
-  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
 /* Tooltip */

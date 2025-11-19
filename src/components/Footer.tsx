@@ -29,40 +29,44 @@ export default function Footer() {
   const lang = (['pt', 'en'].includes(language) ? language : 'pt') as Lang;
 
   return (
-    <footer className="max-w-7xl mx-auto px-4 py-4 lg:py-6 lg:px-4 border bg-[var(--bg-primary)] border-[color:var(--border-color-extra)] rounded-sm mt-6 mb-4">
-      <div className="flex flex-col items-start gap-2">
-        <h2 className="text-2xl font-bold text-[color:var(--text-title)] mb-1 pb-2 border-b border-[color:var(--border-color)] font-title">
-          {texts[lang].name}
-        </h2>
-        <div className="flex flex-col gap-0.5 text-lg text-[color:var(--text-primary)]">
-          <div>{texts[lang].phone}</div>
-          <div>{texts[lang].email}</div>
-          <div>
+    <footer className="max-w-7xl mx-auto px-4 py-8 lg:py-12 lg:px-4 mt-12 border-t border-[color:var(--border-color-extra)]">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div className="flex flex-col gap-2">
+          <h2 className="text-xl font-bold text-[color:var(--text-title)] font-title">
+            {texts[lang].name}
+          </h2>
+          <span className="text-[color:var(--text-secondary)] text-sm">
+            {texts[lang].copyright}
+          </span>
+        </div>
+        
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm text-[color:var(--text-primary)]">
+          <div className="flex flex-col gap-1">
+            <span className="text-[color:var(--text-secondary)] text-xs uppercase tracking-wider">Contact</span>
+            <div>{texts[lang].phone}</div>
+            <div>{texts[lang].email}</div>
+          </div>
+          
+          <div className="flex flex-col gap-1">
+            <span className="text-[color:var(--text-secondary)] text-xs uppercase tracking-wider">Social</span>
             <a 
               href="https://www.linkedin.com/in/gabrieldslemes/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[color:var(--accent-blue)] underline font-medium transition-all duration-200 hover:brightness-120"
+              className="hover:text-[color:var(--text-title)] transition-colors"
             >
               {texts[lang].linkedin}
             </a>
-          </div>
-          <div>
             <a 
               href="https://github.com/Hisennn" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[color:var(--accent-blue)] underline font-medium transition-all duration-200 hover:brightness-120"
+              className="hover:text-[color:var(--text-title)] transition-colors"
             >
               {texts[lang].github}
             </a>
           </div>
         </div>
-      </div>
-      <div className="mt-6">
-        <span className="text-[color:var(--border-color)] text-sm lg:text-base">
-          {texts[lang].copyright}
-        </span>
       </div>
     </footer>
   );
