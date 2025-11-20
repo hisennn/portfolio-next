@@ -9,7 +9,7 @@ const texts = {
   pt: {
     name: 'Gabriel Lemes',
     description: 'Web Dev\nAprendendo Next.js.',
-    location: 'São Paulo, Brasil',
+    location: 'Batatais, São Paulo, Brasil',
     phone: '+55 (16) 9 9390-9231',
     email: 'gabrielsilvarz@outlook.com',
     downloadResume: 'Baixar Currículo'
@@ -17,7 +17,7 @@ const texts = {
   en: {
     name: 'Gabriel Lemes',
     description: 'Web Dev\nLearning Next.js.',
-    location: 'São Paulo, Brazil',
+    location: 'Batatais,São Paulo, Brazil',
     phone: '+55 (16) 9 9390-9231',
     email: 'gabrielsilvarz@outlook.com',
     downloadResume: 'Download Resume'
