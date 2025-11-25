@@ -39,8 +39,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const themeValue = newTheme ? "dark" : "light";
     localStorage.setItem("theme", themeValue);
     document.documentElement.setAttribute("data-theme", themeValue);
-    document.body.style.background = "";
-    document.body.style.color = "";
   };
 
   return (
