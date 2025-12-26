@@ -1,9 +1,7 @@
 'use client';
 
-import { useContext } from 'react';
-import { LanguageContext } from '../contexts/LanguageContext';
-
-import { ArrowUpRight } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
+import { Icon } from '@iconify/react';
 
 const texts = {
   pt: {
@@ -21,8 +19,6 @@ const texts = {
     ana: 'Portfolio for an architect.'
   }
 } as const;
-
-type Lang = keyof typeof texts;
 
 const projects = [
   {
@@ -52,15 +48,15 @@ const projects = [
 ];
 
 export default function Projects() {
-  const { language } = useContext(LanguageContext);
-  const lang = (['pt', 'en'].includes(language) ? language : 'pt') as Lang;
+  const { lang } = useLanguage();
 
   return (
-    <section className="mb-16">
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6">
+    <section className="py-12 border-b border-[var(--border-subtle)]">
+      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
+        <Icon icon="mingcute:folder-line" width={16} />
         {texts[lang].title}
       </h2>
-      
+
       <div className="space-y-6">
         {projects.map((project, index) => (
           <div key={project.name}>
@@ -73,7 +69,7 @@ export default function Projects() {
                   className="text-[var(--text-primary)] font-medium hover:text-[var(--accent-hover)] transition-colors flex items-center gap-1"
                 >
                   {project.name}
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-all duration-200" />
+                  <Icon icon="mingcute:arrow-right-up-line" width={14} className="opacity-0 group-hover:opacity-100 transition-all duration-200" />
                 </a>
                 <span className="text-xs text-[var(--text-muted)]">{project.tech}</span>
               </div>

@@ -1,22 +1,16 @@
 'use client';
 
-import { useContext } from 'react';
-import { LanguageContext } from '../contexts/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
+import { Icon } from '@iconify/react';
 
 const texts = {
   pt: {
     title: 'Skills',
-    intermediate: 'Intermediário',
-    basic: 'Básico',
   },
   en: {
     title: 'Skills',
-    intermediate: 'Intermediate',
-    basic: 'Basic',
   }
 } as const;
-
-type Lang = keyof typeof texts;
 
 const skills = [
   { name: 'HTML', icon: 'devicon-html5-plain' },
@@ -32,19 +26,19 @@ const skills = [
 ];
 
 export default function Skills() {
-  const { language } = useContext(LanguageContext);
-  const lang = (['pt', 'en'].includes(language) ? language : 'pt') as Lang;
+  const { lang } = useLanguage();
 
   return (
-    <section className="mb-16">
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6">
+    <section className="py-8 border-b border-[var(--border-subtle)]">
+      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-5 flex items-center gap-2">
+        <Icon icon="mingcute:code-line" width={16} />
         {texts[lang].title}
       </h2>
-      
+
       <div className="flex flex-wrap gap-5">
         {skills.map((skill) => (
           <div key={skill.name} className="group relative flex flex-col items-center">
-            <i 
+            <i
               className={`${skill.icon} text-3xl text-[var(--text-muted)] transition-all duration-300 group-hover:text-[var(--text-primary)] group-hover:-translate-y-1`}
               title={skill.name}
             ></i>
@@ -56,4 +50,4 @@ export default function Skills() {
       </div>
     </section>
   );
-} 
+}

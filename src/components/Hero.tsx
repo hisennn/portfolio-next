@@ -1,9 +1,7 @@
 'use client';
 
-import { useContext } from 'react';
-import { LanguageContext } from '../contexts/LanguageContext';
-
-import { MapPin, Linkedin, Github, Mail, FileText } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
+import { Icon } from '@iconify/react';
 
 const texts = {
   pt: {
@@ -22,11 +20,8 @@ const texts = {
   }
 } as const;
 
-type Lang = keyof typeof texts;
-
 export default function Hero() {
-  const { language } = useContext(LanguageContext);
-  const lang = (['pt', 'en'].includes(language) ? language : 'pt') as Lang;
+  const { lang } = useLanguage();
 
   return (
     <section className="pb-12 mb-12 border-b border-[var(--border-subtle)]">
@@ -36,10 +31,10 @@ export default function Hero() {
       </h1>
       <p className="text-lg text-[var(--text-secondary)] mb-1">{texts[lang].role}</p>
       <p className="flex items-center gap-1.5 text-sm text-[var(--text-muted)] mb-6">
-        <MapPin size={14} />
+        <Icon icon="mingcute:location-line" width={14} />
         {texts[lang].location}
       </p>
-      
+
       <div className="flex flex-col gap-4">
         <div className="flex gap-5 items-center">
           <a
@@ -49,7 +44,7 @@ export default function Hero() {
             className="text-[var(--text-muted)] hover:text-[var(--accent-hover)] transition-colors"
             aria-label="LinkedIn"
           >
-            <Linkedin size={22} />
+            <Icon icon="mingcute:linkedin-line" width={22} />
           </a>
           <a
             href="https://github.com/Hisennn"
@@ -58,16 +53,16 @@ export default function Hero() {
             className="text-[var(--text-muted)] hover:text-[var(--accent-hover)] transition-colors"
             aria-label="GitHub"
           >
-            <Github size={22} />
+            <Icon icon="mingcute:github-line" width={22} />
           </a>
         </div>
-        
+
         <div className="flex flex-col gap-2">
           <a
             href="mailto:gabrielsilvarz@outlook.com"
             className="text-[var(--text-muted)] hover:text-[var(--accent-hover)] transition-colors flex items-center gap-2 text-sm"
           >
-            <Mail size={14} />
+            <Icon icon="mingcute:mail-line" width={14} />
             gabrielsilvarz@outlook.com
           </a>
           <a
@@ -75,7 +70,7 @@ export default function Hero() {
             download="Gabriel Lemes Currículo.pdf"
             className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--accent-hover)] transition-colors"
           >
-            <FileText size={14} />
+            <Icon icon="mingcute:download-line" width={14} />
             {texts[lang].downloadResume}
           </a>
         </div>

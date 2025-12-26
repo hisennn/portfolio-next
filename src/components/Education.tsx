@@ -1,12 +1,12 @@
 'use client';
 
-import { useContext } from 'react';
-import { LanguageContext } from '../contexts/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
+import { Icon } from '@iconify/react';
 
 const texts = {
   pt: {
     title: 'Formação',
-    text: 'Estou no quarto semestre de Análise e Desenvolvimento de Sistemas. Também continuo aprendendo através de cursos online para melhorar minhas habilidades.',
+    text: 'Estou no quinto semestre de Análise e Desenvolvimento de Sistemas. Também continuo aprendendo através de cursos online para melhorar minhas habilidades.',
     formal: 'Formal',
     online: 'Online',
     uni: 'Claretiano',
@@ -18,7 +18,7 @@ const texts = {
   },
   en: {
     title: 'Education',
-    text: 'Fourth semester of Systems Analysis and Development. Also learning through online courses to improve my skills.',
+    text: 'Fifth semester of Systems Analysis and Development. Also learning through online courses to improve my skills.',
     formal: 'Formal',
     online: 'Online',
     uni: 'Claretiano',
@@ -30,18 +30,16 @@ const texts = {
   }
 } as const;
 
-type Lang = keyof typeof texts;
-
 export default function Education() {
-  const { language } = useContext(LanguageContext);
-  const lang = (['pt', 'en'].includes(language) ? language : 'pt') as Lang;
+  const { lang } = useLanguage();
 
   return (
-    <section className="mb-16">
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6">
+    <section className="py-12 border-b border-[var(--border-subtle)]">
+      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
+        <Icon icon="mingcute:mortarboard-line" width={16} />
         {texts[lang].title}
       </h2>
-      
+
       <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
         {texts[lang].text}
       </p>
@@ -57,9 +55,9 @@ export default function Education() {
             <p className="text-xs text-[var(--text-muted)]">{texts[lang].uniDate}</p>
           </div>
         </div>
-        
+
         <div className="h-px bg-gradient-to-r from-transparent via-[var(--border)] to-transparent" />
-        
+
         <div className="flex items-start gap-4 opacity-50">
           <span className="text-xs text-[var(--text-muted)] w-12 shrink-0 pt-0.5">{texts[lang].online}</span>
           <div>

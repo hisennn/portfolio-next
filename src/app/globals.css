@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
 
 :root {
   --bg-primary: #fafafa;
@@ -10,32 +11,26 @@
   --accent: #000000;
   --accent-hover: #2563eb;
   --border: #e5e5e5;
-  --border-subtle: #f5f5f5;
+  --border-subtle: #e0e0e0;
 }
 
 [data-theme="dark"] {
-  --bg-primary: #111111;
-  --bg-secondary: #181818;
-  --bg-header: rgba(17, 17, 17, 0.7);
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-header: rgba(20, 20, 20, 0.75);
   --text-primary: #ffffff;
   --text-secondary: #d4d4d4;
   --text-muted: #a3a3a3;
   --accent: #ffffff;
   --accent-hover: #60a5fa;
   --border: #2a2a2a;
-  --border-subtle: #222222;
-}
-
-@theme inline {
-  --color-background: var(--bg-primary);
-  --color-foreground: var(--text-primary);
-  --font-inter: var(--font-inter);
+  --border-subtle: #1f1f1f;
 }
 
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: "Google Sans Flex", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

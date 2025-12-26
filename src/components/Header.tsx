@@ -1,40 +1,40 @@
 'use client';
 
-import { useContext } from 'react';
 import Link from 'next/link';
-import { LanguageContext } from '../contexts/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
+import { Icon } from '@iconify/react';
 
 export default function Header() {
-  const { language, setLanguage, isDarkTheme, toggleTheme } = useContext(LanguageContext);
+  const { language, setLanguage, isDarkTheme, toggleTheme } = useLanguage();
 
   const toggleLanguage = () => {
     const newLanguage = language === 'pt' ? 'en' : 'pt';
     setLanguage(newLanguage);
-    localStorage.setItem('language', newLanguage);
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[var(--bg-header)] border-b border-[var(--border-subtle)]">
-      <div className="max-w-3xl mx-auto flex justify-between items-center px-6 py-4">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-[var(--bg-header)] border-b border-[var(--border-subtle)]">
+      <div className="max-w-3xl mx-auto px-6 flex justify-between items-center py-3">
         <Link href="/" className="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors">
           Gabriel Lemes
         </Link>
-        <div className="flex gap-4 items-center text-sm text-[var(--text-muted)]">
+        <div className="flex gap-1 items-center">
           <button
             onClick={toggleLanguage}
-            className="hover:text-[var(--text-primary)] transition-colors"
+            className="px-3 py-1.5 rounded-lg text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all"
+            aria-label={language === 'pt' ? 'Mudar para inglês' : 'Switch to Portuguese'}
           >
             {language === 'pt' ? 'PT' : 'EN'}
           </button>
-          <span className="text-[var(--border)]">|</span>
           <button
             onClick={toggleTheme}
-            className="hover:text-[var(--text-primary)] transition-colors"
+            className="p-2 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all"
+            aria-label={isDarkTheme ? 'Mudar para tema claro' : 'Switch to dark theme'}
           >
-            {isDarkTheme ? 'Dark' : 'Light'}
+            <Icon icon={isDarkTheme ? 'mingcute:moon-line' : 'mingcute:sun-line'} width={18} />
           </button>
         </div>
       </div>
     </header>
   );
-} 
+}

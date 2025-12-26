@@ -1,7 +1,7 @@
 'use client';
 
-import { useContext } from 'react';
-import { LanguageContext } from '../contexts/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
+import { Icon } from '@iconify/react';
 
 const texts = {
   pt: {
@@ -20,18 +20,16 @@ const texts = {
   }
 } as const;
 
-type Lang = keyof typeof texts;
-
 export default function Languages() {
-  const { language } = useContext(LanguageContext);
-  const lang = (['pt', 'en'].includes(language) ? language : 'pt') as Lang;
+  const { lang } = useLanguage();
 
   return (
-    <section className="mb-16">
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6">
+    <section className="py-12">
+      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
+        <Icon icon="mingcute:translate-2-line" width={16} />
         {texts[lang].title}
       </h2>
-      
+
       <div className="flex gap-8">
         <div>
           <p className="text-[var(--text-primary)]">{texts[lang].portuguese}</p>

@@ -10,13 +10,13 @@ type LanguageContextType = {
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: "pt",
-  setLanguage: () => {},
+  setLanguage: () => { },
   isDarkTheme: true,
-  toggleTheme: () => {},
+  toggleTheme: () => { },
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState("pt");
+  const [language, setLanguageState] = useState("pt");
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   useEffect(() => {
@@ -29,9 +29,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       document.documentElement.setAttribute("data-theme", "dark");
     }
     if (savedLanguage) {
-      setLanguage(savedLanguage);
+      setLanguageState(savedLanguage);
     }
   }, []);
+
+  const setLanguage = (lang: string) => {
+    setLanguageState(lang);
+    localStorage.setItem("language", lang);
+  };
 
   const toggleTheme = () => {
     const newTheme = !isDarkTheme;

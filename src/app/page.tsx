@@ -3,6 +3,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Education from '@/components/Education';
@@ -13,9 +14,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       <Header />
-      <main className="max-w-3xl mx-auto px-6 py-16 md:py-24">
+      <main className="max-w-3xl mx-auto px-6 pt-12 md:pt-20">
         <Hero />
         <About />
+        <Experience />
         <Skills />
         <Projects />
         <Education />
