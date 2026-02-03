@@ -8,13 +8,15 @@ const texts = {
     title: 'Experiência',
     present: 'presente',
     remote: 'Remoto',
-    onsite: 'Presencial'
+    onsite: 'Presencial',
+    brazil: 'Brasil'
   },
   en: {
     title: 'Experience',
     present: 'present',
     remote: 'Remote',
-    onsite: 'On-site'
+    onsite: 'On-site',
+    brazil: 'Brazil'
   }
 } as const;
 
@@ -35,7 +37,7 @@ const experiences = [
         'Supporting marketing and outreach'
       ]
     },
-    location: 'remote' as const
+    locationDetails: { pt: 'Baltimore, MD, EUA', en: 'Baltimore, MD, USA' }
   },
   {
     company: 'Freelancer',
@@ -53,12 +55,12 @@ const experiences = [
         'Handling clients independently'
       ]
     },
-    location: null
+    locationDetails: null
   },
   {
     company: 'Trail Dev',
     role: { pt: 'Estagiário', en: 'Intern' },
-    date: null,
+    date: { pt: 'mar 2025 - jul 2025', en: 'mar 2025 - jul 2025' },
     items: {
       pt: [
         'Acompanhei o dia a dia de um escritório de programação',
@@ -71,7 +73,7 @@ const experiences = [
         'Adjustments to a Strapi site for content management (Inovaice)'
       ]
     },
-    location: 'onsite' as const
+    locationDetails: { pt: 'Batatais, SP, BR', en: 'Batatais, SP, BR' }
   }
 ];
 
@@ -80,8 +82,8 @@ export default function Experience() {
 
   return (
     <section className="py-12 border-b border-[var(--border-subtle)]">
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
-        <Icon icon="mingcute:briefcase-line" width={16} />
+      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
+        <Icon icon="mingcute:briefcase-line" width={18} />
         {texts[lang].title}
       </h2>
 
@@ -96,8 +98,15 @@ export default function Experience() {
               </div>
               <div className="flex items-center gap-2 text-xs text-[var(--text-muted)]">
                 {exp.date && <span>{exp.date[lang]}</span>}
-                {exp.date && exp.location && <span>·</span>}
-                {exp.location && <span>{texts[lang][exp.location]}</span>}
+                {exp.locationDetails && (
+                  <>
+                    <span>·</span>
+                    <span className="flex items-center gap-1">
+                      <Icon icon="mingcute:location-line" width={12} />
+                      {exp.locationDetails[lang]}
+                    </span>
+                  </>
+                )}
               </div>
             </div>
             <ul className="space-y-1.5 text-sm text-[var(--text-secondary)]">

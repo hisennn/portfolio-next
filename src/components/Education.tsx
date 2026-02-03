@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 const texts = {
   pt: {
     title: 'Formação',
-    text: 'Estou no quinto semestre de Análise e Desenvolvimento de Sistemas. Também continuo aprendendo através de cursos online para melhorar minhas habilidades.',
+    text: 'Estou no sexto e último semestre de Análise e Desenvolvimento de Sistemas. Também continuo aprendendo através de cursos online para melhorar minhas habilidades.',
     formal: 'Formal',
     online: 'Online',
     uni: 'Claretiano',
@@ -18,7 +18,7 @@ const texts = {
   },
   en: {
     title: 'Education',
-    text: 'Fifth semester of Systems Analysis and Development. Also learning through online courses to improve my skills.',
+    text: 'Sixth and final semester of Systems Analysis and Development. Also learning through online courses to improve my skills.',
     formal: 'Formal',
     online: 'Online',
     uni: 'Claretiano',
@@ -35,8 +35,8 @@ export default function Education() {
 
   return (
     <section className="py-12 border-b border-[var(--border-subtle)]">
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
-        <Icon icon="mingcute:mortarboard-line" width={16} />
+      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
+        <Icon icon="mingcute:mortarboard-line" width={18} />
         {texts[lang].title}
       </h2>
 

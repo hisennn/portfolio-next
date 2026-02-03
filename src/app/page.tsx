@@ -17,8 +17,8 @@ export default function Home() {
       <main className="max-w-3xl mx-auto px-6 pt-12 md:pt-20">
         <Hero />
         <About />
-        <Experience />
         <Skills />
+        <Experience />
         <Projects />
         <Education />
         <Languages />

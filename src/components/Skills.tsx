@@ -30,8 +30,8 @@ export default function Skills() {
 
   return (
     <section className="py-8 border-b border-[var(--border-subtle)]">
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-5 flex items-center gap-2">
-        <Icon icon="mingcute:code-line" width={16} />
+      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-5 flex items-center gap-2">
+        <Icon icon="mingcute:code-line" width={18} />
         {texts[lang].title}
       </h2>
 

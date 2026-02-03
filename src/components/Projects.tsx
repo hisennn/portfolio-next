@@ -22,6 +22,12 @@ const texts = {
 
 const projects = [
   {
+    name: 'Baltimore Re-Construction',
+    url: 'https://baltimorereconstruction.com/',
+    tech: 'Squarespace',
+    descKey: 'baltre' as const
+  },
+  {
     name: 'Ana Zabala Arquiteta',
     url: 'https://anazabala-arquiteta.vercel.app/',
     tech: 'Next.js, TypeScript, Tailwind',
@@ -38,12 +44,6 @@ const projects = [
     url: 'https://ascii-converter.vercel.app/',
     tech: 'HTML, CSS, JS',
     descKey: 'ascii' as const
-  },
-  {
-    name: 'Baltimore Re-Construction',
-    url: 'https://baltimorereconstruction.com/',
-    tech: 'Squarespace',
-    descKey: 'baltre' as const
   }
 ];
 
@@ -52,8 +52,8 @@ export default function Projects() {
 
   return (
     <section className="py-12 border-b border-[var(--border-subtle)]">
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
-        <Icon icon="mingcute:folder-line" width={16} />
+      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
+        <Icon icon="mingcute:folder-line" width={18} />
         {texts[lang].title}
       </h2>
 
@@ -66,10 +66,10 @@ export default function Projects() {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] font-medium hover:text-[var(--accent-hover)] transition-colors flex items-center gap-1"
+                  className="text-[var(--text-primary)] font-medium hover:text-[var(--accent-hover)] transition-colors flex items-center gap-1 hover:underline underline-offset-4 decoration-[var(--border)]"
                 >
                   {project.name}
-                  <Icon icon="mingcute:arrow-right-up-line" width={14} className="opacity-0 group-hover:opacity-100 transition-all duration-200" />
+                  <Icon icon="mingcute:arrow-right-up-line" width={14} className="text-[var(--text-muted)] group-hover:text-[var(--accent-hover)] transition-colors" />
                 </a>
                 <span className="text-xs text-[var(--text-muted)]">{project.tech}</span>
               </div>
