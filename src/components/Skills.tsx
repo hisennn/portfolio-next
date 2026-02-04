@@ -6,9 +6,11 @@ import { Icon } from '@iconify/react';
 const texts = {
   pt: {
     title: 'Skills',
+    soft: 'Organização · Trabalho em equipe · Proatividade · Resolução de problemas · Aprendizado contínuo · Conhecimentos em informática'
   },
   en: {
     title: 'Skills',
+    soft: 'Organization · Teamwork · Proactivity · Problem solving · Continuous learning · IT knowledge'
   }
 } as const;
 
@@ -48,6 +50,9 @@ export default function Skills() {
           </div>
         ))}
       </div>
+      <p className="mt-6 text-xs text-[var(--text-muted)] leading-relaxed">
+        {texts[lang].soft}
+      </p>
     </section>
   );
 }

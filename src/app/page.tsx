@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       <Header />
-      <main className="max-w-3xl mx-auto px-6 pt-12 md:pt-20">
+      <main className="max-w-4xl mx-auto px-6 pt-12 md:pt-20">
         <Hero />
         <About />
         <Skills />

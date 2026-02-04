@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-[var(--border-subtle)] bg-[var(--bg-secondary)]">
-      <div className="max-w-3xl mx-auto px-6 py-10">
+      <div className="max-w-4xl mx-auto px-6 py-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="flex flex-col gap-3">
             <span className="text-[var(--text-primary)] font-medium">Gabriel Lemes</span>
