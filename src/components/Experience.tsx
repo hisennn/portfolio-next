@@ -29,15 +29,18 @@ const experiences = [
       pt: [
         'Criei o site da empresa usando Squarespace, com foco em SEO',
         'Ajudo com planilhas e organização interna',
+        'Colaboro com ideias para otimizar processos e organizar o fluxo de trabalho',
         'Apoio em marketing e divulgação'
       ],
       en: [
         'Built the company website using Squarespace, with a focus on SEO',
         'Helping with spreadsheets and internal organization',
+        'Collaborating with ideas to optimize processes and organize workflow',
         'Supporting marketing and outreach'
       ]
     },
-    locationDetails: { pt: 'Baltimore, MD, EUA', en: 'Baltimore, MD, USA' }
+    locationDetails: { pt: 'Baltimore, MD, EUA', en: 'Baltimore, MD, USA' },
+    type: 'remote' as const
   },
   {
     company: 'Freelancer',
@@ -73,7 +76,8 @@ const experiences = [
         'Adjustments to a Strapi site for content management (Inovaice)'
       ]
     },
-    locationDetails: { pt: 'Batatais, SP, BR', en: 'Batatais, SP, BR' }
+    locationDetails: { pt: 'Batatais, SP, BR', en: 'Batatais, SP, BR' },
+    type: 'onsite' as const
   }
 ];
 
@@ -105,6 +109,12 @@ export default function Experience() {
                       <Icon icon="mingcute:location-line" width={12} />
                       {exp.locationDetails[lang]}
                     </span>
+                  </>
+                )}
+                {'type' in exp && exp.type && (
+                  <>
+                    <span>·</span>
+                    <span className="lowercase first-letter:uppercase">{texts[lang][exp.type]}</span>
                   </>
                 )}
               </div>

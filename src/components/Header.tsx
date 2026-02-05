@@ -13,7 +13,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-[var(--bg-header)] border-b border-[var(--border-subtle)]">
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--bg-header)]/80 border-b border-[var(--border-subtle)] transition-all duration-300 supports-[backdrop-filter]:bg-[var(--bg-header)]/60">
       <div className="max-w-4xl mx-auto px-6 flex justify-between items-center py-3">
         <Link href="/" className="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors">
           Gabriel Lemes

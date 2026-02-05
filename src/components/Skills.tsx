@@ -2,15 +2,34 @@
 
 import { useLanguage } from '../hooks/useLanguage';
 import { Icon } from '@iconify/react';
+import { useRef } from 'react';
 
 const texts = {
   pt: {
     title: 'Skills',
-    soft: 'Organização · Trabalho em equipe · Proatividade · Resolução de problemas · Aprendizado contínuo · Conhecimentos em informática'
+    soft: [
+      'Organização',
+      'Trabalho em equipe',
+      'Proatividade',
+      'Resolução de problemas',
+      'Aprendizado contínuo',
+      'Conhecimentos em informática',
+      'Office 365',
+      'Google Docs'
+    ]
   },
   en: {
     title: 'Skills',
-    soft: 'Organization · Teamwork · Proactivity · Problem solving · Continuous learning · IT knowledge'
+    soft: [
+      'Organization',
+      'Teamwork',
+      'Proactivity',
+      'Problem solving',
+      'Continuous learning',
+      'IT knowledge',
+      'Office 365',
+      'Google Docs'
+    ]
   }
 } as const;
 
@@ -27,6 +46,34 @@ const skills = [
   { name: 'Figma', icon: 'devicon-figma-plain' }
 ];
 
+const SkillItem = ({ skill }: { skill: typeof skills[0] }) => {
+  const tooltipRef = useRef<HTMLSpanElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!tooltipRef.current) return;
+    tooltipRef.current.style.left = `${e.clientX + 18}px`;
+    tooltipRef.current.style.top = `${e.clientY + 16}px`;
+  };
+
+  return (
+    <div 
+      className="group relative flex flex-col items-center justify-center p-2"
+      onMouseMove={handleMouseMove}
+    >
+      <i
+        className={`${skill.icon} text-3xl text-[var(--text-muted)] transition-all duration-300 group-hover:text-[var(--text-primary)] group-hover:scale-110`}
+      ></i>
+      <span 
+        ref={tooltipRef}
+        className="opacity-0 group-hover:opacity-100 fixed z-50 text-[11px] font-medium text-[var(--text-primary)] bg-[var(--bg-secondary)] px-1.5 py-0.5 rounded border border-[var(--border-subtle)] shadow-lg pointer-events-none transition-opacity duration-200 whitespace-nowrap"
+        style={{ left: 0, top: 0 }}
+      >
+        {skill.name}
+      </span>
+    </div>
+  );
+};
+
 export default function Skills() {
   const { lang } = useLanguage();
 
@@ -37,22 +84,26 @@ export default function Skills() {
         {texts[lang].title}
       </h2>
 
-      <div className="flex flex-wrap gap-5">
+      <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
-          <div key={skill.name} className="group relative flex flex-col items-center">
-            <i
-              className={`${skill.icon} text-3xl text-[var(--text-muted)] transition-all duration-300 group-hover:text-[var(--text-primary)] group-hover:-translate-y-1`}
-              title={skill.name}
-            ></i>
-            <span className="opacity-0 group-hover:opacity-100 absolute -bottom-5 text-[10px] font-medium text-[var(--text-muted)] transition-all duration-300 whitespace-nowrap">
-              {skill.name}
+          <SkillItem key={skill.name} skill={skill} />
+        ))}
+      </div>
+
+      <div className="mt-6 flex flex-wrap gap-x-2.5 gap-y-2 items-center">
+        {texts[lang].soft.map((item, index) => (
+          <div key={index} className="flex items-center gap-2.5">
+            <span
+              className="text-xs text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:scale-105 transition-all duration-300 cursor-default inline-block origin-center"
+            >
+              {item}
             </span>
+            {index < texts[lang].soft.length - 1 && (
+              <span className="text-[var(--border)] text-[8px]">●</span>
+            )}
           </div>
         ))}
       </div>
-      <p className="mt-6 text-xs text-[var(--text-muted)] leading-relaxed">
-        {texts[lang].soft}
-      </p>
     </section>
   );
 }

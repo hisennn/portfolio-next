@@ -2,37 +2,29 @@
 @import "tailwindcss";
 
 :root {
-  /* Coffee/Warm Light Theme */
-  --bg-primary: #e0d7cd;      /* Deeper beige/light brown */
-  --bg-secondary: #d6cdc3;    /* Slightly darker separation */
+  --bg-primary: #e0d7cd;
+  --bg-secondary: #d6cdc3;
   --bg-header: rgba(224, 215, 205, 0.85);
-  
-  --text-primary: #1f1916;    /* Almost black-brown for max contrast */
-  --text-secondary: #4a403a;  /* Darker roast for readability */
-  --text-muted: #6e6058;      /* Darker muted tone to sit well on beige */
-  
+  --text-primary: #1f1916;
+  --text-secondary: #4a403a;
+  --text-muted: #6e6058;
   --accent: #1f1916;
-  --accent-hover: #b05d35;    /* Vibrant Rust/Copper for clear visibility */
-  
+  --accent-hover: #b05d35;
   --border: #c9bfb4;
   --border-subtle: #d1c8be;
   --transition-theme: 0.5s ease;
 }
 
 [data-theme="dark"] {
-  /* Deep Blue-Purple Dark Theme (Non-vibrant/Professional) */
-  --bg-primary: #0f111a;      /* Deep desaturated dark blue/purple base */
-  --bg-secondary: #171a26;    /* Slightly lighter panel color */
+  --bg-primary: #0f111a;
+  --bg-secondary: #171a26;
   --bg-header: rgba(15, 17, 26, 0.85);
-  
-  --text-primary: #eff0f5;    /* High contrast off-white */
-  --text-secondary: #b0b5c9;  /* Lighter cool gray for better reading */
-  --text-muted: #7e859e;      /* Brightened muted tone */
-  
+  --text-primary: #eff0f5;
+  --text-secondary: #b0b5c9;
+  --text-muted: #7e859e;
   --accent: #eff0f5;
-  --accent-hover: #aebbf5;    /* Bright Lavender/Periwinkle for pop */
-  
-  --border: #23283b;          /* Dark blue-gray border */
+  --accent-hover: #aebbf5;
+  --border: #23283b;
   --border-subtle: #1a1e2b;
 }
 
