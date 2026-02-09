@@ -24,7 +24,7 @@ const experiences = [
   {
     company: 'Baltimore Re-Construction',
     role: { pt: 'Assistente Criativo e Operacional', en: 'Creative & Operations Assistant' },
-    date: { pt: 'out 2024 - presente', en: 'oct 2024 - present' },
+    date: { pt: 'out 2025 - presente', en: 'oct 2025 - present' },
     items: {
       pt: [
         'Criei o site da empresa usando Squarespace, com foco em SEO',
