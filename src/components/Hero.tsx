@@ -24,7 +24,7 @@ export default function Hero() {
   const { lang } = useLanguage();
 
   return (
-    <section className="pb-12 mb-12 border-b border-[var(--border-subtle)]">
+    <section className="pb-12 border-b border-[var(--border-subtle)]">
       <p className="text-[var(--text-muted)] text-sm mb-2">{texts[lang].greeting}</p>
       <h1 className="text-4xl md:text-5xl font-semibold text-[var(--text-primary)] mb-2 tracking-tight">
         {texts[lang].name}

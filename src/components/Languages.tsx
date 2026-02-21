@@ -30,7 +30,7 @@ export default function Languages() {
         {texts[lang].title}
       </h2>
 
-      <div className="flex gap-8">
+      <div className="flex flex-wrap gap-8 md:gap-12">
         <div>
           <p className="text-[var(--text-primary)]">{texts[lang].portuguese}</p>
           <p className="text-sm text-[var(--text-muted)]">{texts[lang].native}</p>

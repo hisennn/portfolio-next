@@ -61,7 +61,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div key={project.name}>
             <div className="group">
-              <div className="flex items-baseline gap-2 mb-1">
+              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-1">
                 <a
                   href={project.url}
                   target="_blank"

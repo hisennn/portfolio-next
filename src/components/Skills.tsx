@@ -78,8 +78,8 @@ export default function Skills() {
   const { lang } = useLanguage();
 
   return (
-    <section className="py-8 border-b border-[var(--border-subtle)]">
-      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-5 flex items-center gap-2">
+    <section className="py-12 border-b border-[var(--border-subtle)]">
+      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
         <Icon icon="mingcute:code-line" width={18} />
         {texts[lang].title}
       </h2>
@@ -90,16 +90,16 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-x-2.5 gap-y-2 items-center">
+      <div className="mt-8 flex flex-wrap gap-x-3 gap-y-2.5 items-center">
         {texts[lang].soft.map((item, index) => (
-          <div key={index} className="flex items-center gap-2.5">
+          <div key={index} className="flex items-center gap-3">
             <span
-              className="text-xs text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:scale-105 transition-all duration-300 cursor-default inline-block origin-center"
+              className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:scale-105 transition-all duration-300 cursor-default inline-block origin-center"
             >
               {item}
             </span>
             {index < texts[lang].soft.length - 1 && (
-              <span className="text-[var(--border)] text-[8px]">●</span>
+              <span className="text-[var(--border)] text-[10px]">●</span>
             )}
           </div>
         ))}

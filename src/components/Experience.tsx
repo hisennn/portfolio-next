@@ -100,7 +100,7 @@ export default function Experience() {
                 <span className="text-[var(--text-muted)]">·</span>
                 <span className="text-sm text-[var(--text-secondary)]">{exp.role[lang]}</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-[var(--text-muted)]">
+              <div className="flex items-center gap-2 flex-wrap text-xs text-[var(--text-muted)]">
                 {exp.date && <span>{exp.date[lang]}</span>}
                 {exp.locationDetails && (
                   <>
