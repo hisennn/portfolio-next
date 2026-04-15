@@ -1,7 +1,6 @@
 'use client';
 
 import { useLanguage } from '../hooks/useLanguage';
-import { Icon } from '@iconify/react';
 import { useRef } from 'react';
 
 const texts = {

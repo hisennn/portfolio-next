@@ -1,7 +1,7 @@
 'use client';
 
 import { useLanguage } from '../hooks/useLanguage';
-import { Icon } from '@iconify/react';
+import BoxIcon from './BoxIcon';
 
 const texts = {
   pt: {
@@ -29,11 +29,11 @@ export default function Footer() {
                 href="mailto:gabrielsilvarz@outlook.com"
                 className="hover:text-[var(--accent)] transition-colors flex items-center gap-2"
               >
-                <Icon icon="bx:envelope" width={18} />
+                <BoxIcon name="bx-envelope" size={18} />
                 gabrielsilvarz@outlook.com
               </a>
               <span className="flex items-center gap-2">
-                <Icon icon="bx:phone" width={18} />
+                <BoxIcon name="bx-phone" size={18} />
                 +55 16 9 9390-9231
               </span>
             </div>
@@ -47,7 +47,7 @@ export default function Footer() {
               className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
               aria-label="LinkedIn"
             >
-              <Icon icon="bxl:linkedin" width={26} />
+              <BoxIcon name="bxl-linkedin" size={26} />
             </a>
             <a
               href="https://github.com/Hisennn"
@@ -56,7 +56,7 @@ export default function Footer() {
               className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
               aria-label="GitHub"
             >
-              <Icon icon="bxl:github" width={26} />
+              <BoxIcon name="bxl-github" size={26} />
             </a>
           </div>
           

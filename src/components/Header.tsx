@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useLanguage } from '../hooks/useLanguage';
-import { Icon } from '@iconify/react';
+import BoxIcon from './BoxIcon';
 
 export default function Header() {
   const { language, setLanguage, isDarkTheme, toggleTheme } = useLanguage();
@@ -31,7 +31,7 @@ export default function Header() {
             className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
             aria-label={isDarkTheme ? 'Mudar para tema claro' : 'Switch to dark theme'}
           >
-            <Icon icon={isDarkTheme ? 'bx:moon' : 'bx:sun'} width={16} />
+            <BoxIcon name={isDarkTheme ? 'bx-moon' : 'bx-sun'} size={16} />
           </button>
         </div>
       </div>

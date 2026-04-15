@@ -1,7 +1,7 @@
 'use client';
 
 import { useLanguage } from '../hooks/useLanguage';
-import { Icon } from '@iconify/react';
+import BoxIcon from './BoxIcon';
 
 const texts = {
   pt: {
@@ -43,17 +43,17 @@ export default function Hero() {
             href="mailto:gabrielsilvarz@outlook.com"
             className="flex items-center gap-2.5 text-[15px] font-mono text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors w-fit"
           >
-            <Icon icon="bx:envelope" width={16} />
+            <BoxIcon name="bx-envelope" size={16} />
             gabrielsilvarz@outlook.com
           </a>
           <p className="flex items-center gap-2.5 text-[15px] font-mono text-[var(--text-secondary)]">
-            <Icon icon="bx:phone" width={16} />
+            <BoxIcon name="bx-phone" size={16} />
             +55 16 9 9390-9231
           </p>
         </div>
 
         <p className="flex items-center gap-2 text-xs font-mono text-[var(--text-muted)]">
-          <Icon icon="bx:map" width={14} />
+          <BoxIcon name="bx-map" size={14} />
           {texts[lang].location}
         </p>
 
@@ -65,7 +65,7 @@ export default function Hero() {
             className="flex items-center gap-2 text-sm font-mono text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
             aria-label="LinkedIn"
           >
-            <Icon icon="bxl:linkedin" width={17} />
+            <BoxIcon name="bxl-linkedin" size={17} />
             LinkedIn
           </a>
           <span className="text-[var(--text-muted)] select-none">·</span>
@@ -76,7 +76,7 @@ export default function Hero() {
             className="flex items-center gap-2 text-sm font-mono text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
             aria-label="GitHub"
           >
-            <Icon icon="bxl:github" width={17} />
+            <BoxIcon name="bxl-github" size={17} />
             GitHub
           </a>
           <span className="text-[var(--text-muted)] select-none">·</span>
@@ -85,7 +85,7 @@ export default function Hero() {
             download="Gabriel Lemes Currículo.pdf"
             className="flex items-center gap-2 text-sm font-mono text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
           >
-            <Icon icon="bx:download" width={17} />
+            <BoxIcon name="bx-download" size={17} />
             {texts[lang].downloadResume}
           </a>
         </div>

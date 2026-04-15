@@ -1,7 +1,7 @@
 'use client';
 
 import { useLanguage } from '../hooks/useLanguage';
-import { Icon } from '@iconify/react';
+import BoxIcon from './BoxIcon';
 
 const texts = {
   pt: {
@@ -69,7 +69,7 @@ export default function Projects() {
                     className="inline-flex items-center gap-2 text-lg md:text-xl font-heading text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
                   >
                     {project.name}
-                    <Icon icon="bx:link-external" width={14} className="shrink-0 opacity-50" />
+                    <BoxIcon name="bx-link-external" size={14} className="shrink-0 opacity-50" />
                   </a>
                   <span className="text-[11px] font-mono text-[var(--text-muted)] uppercase tracking-widest shrink-0">
                     {project.tech}
