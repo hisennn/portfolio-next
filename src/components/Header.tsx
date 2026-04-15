@@ -13,25 +13,25 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--bg-header)]/80 border-b border-[var(--border-subtle)] transition-all duration-300 supports-[backdrop-filter]:bg-[var(--bg-header)]/60">
-      <div className="max-w-4xl mx-auto px-6 flex justify-between items-center py-3">
-        <Link href="/" className="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors">
-          Gabriel Lemes
+    <header className="sticky top-0 z-50 bg-[var(--bg-primary)]/80 backdrop-blur-xl">
+      <div className="max-w-2xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <Link href="/" className="font-heading text-lg tracking-tight text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors">
+          GL.
         </Link>
-        <div className="flex gap-1 items-center">
+        <div className="flex items-center gap-6">
           <button
             onClick={toggleLanguage}
-            className="px-3 py-1.5 rounded-lg text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all"
+            className="text-[11px] font-mono uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
             aria-label={language === 'pt' ? 'Mudar para inglês' : 'Switch to Portuguese'}
           >
-            {language === 'pt' ? 'PT' : 'EN'}
+            {language === 'pt' ? 'PT_BR' : 'EN_US'}
           </button>
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all"
+            className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
             aria-label={isDarkTheme ? 'Mudar para tema claro' : 'Switch to dark theme'}
           >
-            <Icon icon={isDarkTheme ? 'mingcute:moon-line' : 'mingcute:sun-line'} width={18} />
+            <Icon icon={isDarkTheme ? 'bx:moon' : 'bx:sun'} width={16} />
           </button>
         </div>
       </div>

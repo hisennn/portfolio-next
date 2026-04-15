@@ -12,9 +12,9 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)]">
+    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)]">
       <Header />
-      <main className="max-w-4xl mx-auto px-6 pt-12 md:pt-20">
+      <main className="max-w-2xl mx-auto px-6 pt-16 md:pt-32 pb-24 md:pb-32 flex flex-col gap-24 md:gap-32">
         <Hero />
         <About />
         <Skills />

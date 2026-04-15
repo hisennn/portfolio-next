@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/fraunces": "^5.2.9",
+    "@fontsource/instrument-sans": "^5.2.8",
+    "@fontsource/onest": "^5.2.11",
     "@iconify-icons/mingcute": "^1.2.9",
     "@iconify/react": "^6.0.2",
+    "cal-sans": "^1.0.1",
     "next": "^16.1.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"

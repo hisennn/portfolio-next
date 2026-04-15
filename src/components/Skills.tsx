@@ -78,31 +78,35 @@ export default function Skills() {
   const { lang } = useLanguage();
 
   return (
-    <section className="py-12 border-b border-[var(--border-subtle)]">
-      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
-        <Icon icon="mingcute:code-line" width={18} />
-        {texts[lang].title}
-      </h2>
+    <section>
+      <div className="flex flex-col gap-8">
+        <h2 className="text-2xl md:text-3xl font-heading tracking-tight text-[var(--text-primary)]">
+          {texts[lang].title}
+        </h2>
 
-      <div className="flex flex-wrap gap-2">
-        {skills.map((skill) => (
-          <SkillItem key={skill.name} skill={skill} />
-        ))}
-      </div>
-
-      <div className="mt-8 flex flex-wrap gap-x-3 gap-y-2.5 items-center">
-        {texts[lang].soft.map((item, index) => (
-          <div key={index} className="flex items-center gap-3">
-            <span
-              className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:scale-105 transition-all duration-300 cursor-default inline-block origin-center"
-            >
-              {item}
-            </span>
-            {index < texts[lang].soft.length - 1 && (
-              <span className="text-[var(--border)] text-[10px]">●</span>
-            )}
+        <div className="flex flex-col gap-12 border-t border-[var(--border)] pt-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <h3 className="text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--text-muted)] mt-1">Tech Stack</h3>
+            <div className="col-span-3 flex flex-wrap gap-x-6 gap-y-3">
+              {skills.map((skill) => (
+                 <SkillItem key={skill.name} skill={skill} />
+              ))}
+            </div>
           </div>
-        ))}
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <h3 className="text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--text-muted)] mt-1">Soft Skills</h3>
+            <div className="col-span-3 flex flex-wrap gap-x-6 gap-y-3">
+              {texts[lang].soft.map((item, index) => (
+                <span key={index} className="text-sm md:text-base font-body text-[var(--text-secondary)]">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+        </div>
       </div>
     </section>
   );

@@ -18,14 +18,15 @@ export default function About() {
   const { lang } = useLanguage();
 
   return (
-    <section className="py-12 border-b border-[var(--border-subtle)]">
-      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
-        <Icon icon="mingcute:user-3-line" width={18} />
-        {texts[lang].title}
-      </h2>
-      <p className="text-[var(--text-secondary)] leading-relaxed">
-        {texts[lang].about}
-      </p>
+    <section>
+      <div className="flex flex-col gap-6">
+        <h2 className="text-2xl md:text-3xl font-heading tracking-tight text-[var(--text-primary)]">
+          {texts[lang].title}
+        </h2>
+        <p className="text-[var(--text-secondary)] text-[16px] md:text-[17px] font-body font-light leading-relaxed max-w-[90%]">
+          {texts[lang].about}
+        </p>
+      </div>
     </section>
   );
 }

@@ -24,53 +24,68 @@ export default function Hero() {
   const { lang } = useLanguage();
 
   return (
-    <section className="pb-12 border-b border-[var(--border-subtle)]">
-      <p className="text-[var(--text-muted)] text-sm mb-2">{texts[lang].greeting}</p>
-      <h1 className="text-4xl md:text-5xl font-semibold text-[var(--text-primary)] mb-2 tracking-tight">
-        {texts[lang].name}
-      </h1>
-      <p className="text-lg text-[var(--text-secondary)] mb-1">{texts[lang].role}</p>
-      <p className="flex items-center gap-1.5 text-sm text-[var(--text-muted)] mb-6">
-        <Icon icon="mingcute:location-line" width={14} />
-        {texts[lang].location}
-      </p>
+    <section className="flex flex-col gap-10">
+      <div className="flex flex-col gap-2">
+        <p className="text-xs font-mono text-[var(--text-muted)] uppercase tracking-[0.2em]">
+          {texts[lang].greeting}
+        </p>
+        <h1 className="font-heading text-6xl md:text-8xl tracking-tight text-[var(--text-primary)] leading-[0.9]">
+          {texts[lang].name}
+        </h1>
+        <p className="font-body text-lg md:text-xl text-[var(--text-secondary)] mt-3">
+          {texts[lang].role}
+        </p>
+      </div>
 
-      <div className="flex flex-col gap-4">
-        <div className="flex gap-5 items-center">
+      <div className="flex flex-col gap-4 border-t border-[var(--border)] pt-6">
+        <div className="flex flex-col gap-1.5">
+          <a
+            href="mailto:gabrielsilvarz@outlook.com"
+            className="flex items-center gap-2.5 text-[15px] font-mono text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors w-fit"
+          >
+            <Icon icon="bx:envelope" width={16} />
+            gabrielsilvarz@outlook.com
+          </a>
+          <p className="flex items-center gap-2.5 text-[15px] font-mono text-[var(--text-secondary)]">
+            <Icon icon="bx:phone" width={16} />
+            +55 16 9 9390-9231
+          </p>
+        </div>
+
+        <p className="flex items-center gap-2 text-xs font-mono text-[var(--text-muted)]">
+          <Icon icon="bx:map" width={14} />
+          {texts[lang].location}
+        </p>
+
+        <div className="flex items-center gap-4">
           <a
             href="https://www.linkedin.com/in/gabrieldslemes/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--text-muted)] hover:text-[var(--accent-hover)] transition-colors"
+            className="flex items-center gap-2 text-sm font-mono text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
             aria-label="LinkedIn"
           >
-            <Icon icon="mingcute:linkedin-line" width={22} />
+            <Icon icon="bxl:linkedin" width={17} />
+            LinkedIn
           </a>
+          <span className="text-[var(--text-muted)] select-none">·</span>
           <a
             href="https://github.com/Hisennn"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--text-muted)] hover:text-[var(--accent-hover)] transition-colors"
+            className="flex items-center gap-2 text-sm font-mono text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
             aria-label="GitHub"
           >
-            <Icon icon="mingcute:github-line" width={22} />
+            <Icon icon="bxl:github" width={17} />
+            GitHub
           </a>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <a
-            href="mailto:gabrielsilvarz@outlook.com"
-            className="text-[var(--text-muted)] hover:text-[var(--accent-hover)] transition-colors flex items-center gap-2 text-sm"
-          >
-            <Icon icon="mingcute:mail-line" width={14} />
-            gabrielsilvarz@outlook.com
-          </a>
+          <span className="text-[var(--text-muted)] select-none">·</span>
           <a
             href="/gabriel_curriculo.pdf"
             download="Gabriel Lemes Currículo.pdf"
-            className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--accent-hover)] transition-colors"
+            className="flex items-center gap-2 text-sm font-mono text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
           >
-            <Icon icon="mingcute:download-line" width={14} />
+            <Icon icon="bx:download" width={17} />
             {texts[lang].downloadResume}
           </a>
         </div>

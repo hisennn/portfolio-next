@@ -34,37 +34,47 @@ export default function Education() {
   const { lang } = useLanguage();
 
   return (
-    <section className="py-12 border-b border-[var(--border-subtle)]">
-      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
-        <Icon icon="mingcute:mortarboard-line" width={18} />
-        {texts[lang].title}
-      </h2>
+    <section>
+      <div className="flex flex-col gap-8">
+        <h2 className="text-2xl md:text-3xl font-heading tracking-tight text-[var(--text-primary)]">
+          {texts[lang].title}
+        </h2>
 
-      <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
-        {texts[lang].text}
-      </p>
+        <div className="flex flex-col border-t border-[var(--border)] pt-8">
+          <p className="text-[var(--text-secondary)] font-body text-lg font-light leading-relaxed max-w-xl mb-12">
+            {texts[lang].text}
+          </p>
 
-      <div className="space-y-6">
-        <div className="relative group">
-          <div className="flex flex-col gap-1">
-            <span className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1">{texts[lang].formal}</span>
-            <p className="text-[var(--text-primary)] font-medium text-lg">{texts[lang].uniCourse}</p>
-            <p className="text-sm text-[var(--text-secondary)]">
-              {texts[lang].uni} · {texts[lang].uniType}
-            </p>
-            <p className="text-xs text-[var(--text-muted)] mt-1">{texts[lang].uniDate}</p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-baseline mb-8">
+            <span className="col-span-1 text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--text-muted)]">
+              {texts[lang].formal}
+            </span>
+            <div className="col-span-3 flex flex-col gap-2">
+              <h3 className="text-xl md:text-2xl font-heading tracking-tight text-[var(--text-primary)]">
+                {texts[lang].uniCourse}
+              </h3>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 font-mono text-[13px] text-[var(--text-muted)]">
+                <span>{texts[lang].uni}</span>
+                <span className="hidden sm:inline text-[var(--text-muted)]">/</span>
+                <span>{texts[lang].uniType}</span>
+                <span className="hidden sm:inline text-[var(--text-muted)]">/</span>
+                <span>{texts[lang].uniDate}</span>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div className="h-px bg-gradient-to-r from-transparent via-[var(--border)] to-transparent" />
-
-        <div className="opacity-60">
-          <div className="flex flex-col gap-1">
-            <span className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] mb-1">{texts[lang].online}</span>
-            <p className="text-sm text-[var(--text-secondary)] font-medium">{texts[lang].course}</p>
-            <p className="text-xs text-[var(--text-muted)]">
-              {texts[lang].courseProvider}
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-baseline opacity-70 mt-8 md:mt-4">
+            <span className="col-span-1 text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--text-muted)]">
+              {texts[lang].online}
+            </span>
+            <div className="col-span-3 flex flex-col gap-2">
+              <h3 className="text-lg md:text-xl font-heading tracking-tight text-[var(--text-primary)]">
+                {texts[lang].course}
+              </h3>
+              <p className="font-mono text-[13px] text-[var(--text-muted)]">
+                {texts[lang].courseProvider}
+              </p>
+            </div>
           </div>
         </div>
       </div>

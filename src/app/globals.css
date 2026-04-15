@@ -1,45 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
+@import "cal-sans";
 
 :root {
-  --bg-primary: #e0d7cd;
-  --bg-secondary: #d6cdc3;
-  --bg-header: rgba(224, 215, 205, 0.85);
-  --text-primary: #1f1916;
-  --text-secondary: #4a403a;
-  --text-muted: #6e6058;
-  --accent: #1f1916;
-  --accent-hover: #b05d35;
-  --border: #c9bfb4;
-  --border-subtle: #d1c8be;
-  --transition-theme: 0.5s ease;
+  --bg-primary: #faf9f7;
+  --bg-secondary: #f0eee9;
+  --text-primary: #121212;
+  --text-secondary: #5a5a5a;
+  --text-muted: #8b8a88;
+  --accent: #a52020;
+  --accent-hover: #7b1616;
+  --accent-secondary: #c2aa82;
+  --border: #e0deda;
+  --border-subtle: #eeece8;
+  --font-heading: 'Cal Sans', sans-serif;
+  --font-body: var(--font-onest), sans-serif;
+  --transition-theme: 0.3s ease;
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0f111a;
-  --bg-secondary: #171a26;
-  --bg-header: rgba(15, 17, 26, 0.85);
-  --text-primary: #eff0f5;
-  --text-secondary: #b0b5c9;
-  --text-muted: #7e859e;
-  --accent: #eff0f5;
-  --accent-hover: #aebbf5;
-  --border: #23283b;
-  --border-subtle: #1a1e2b;
+  --bg-primary: #0a0a0b;
+  --bg-secondary: #121214;
+  --text-primary: #efedea;
+  --text-secondary: #999894;
+  --text-muted: #666563;
+  --accent: #b84040;
+  --accent-hover: #c95454;
+  --accent-secondary: #ccbc9d;
+  --border: #222225;
+  --border-subtle: #18181a;
 }
 
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: "Manrope", system-ui, sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color var(--transition-theme), color var(--transition-theme);
+  line-height: auto;
 }
 
 ::selection {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+  background: var(--accent);
+  color: #fff;
 }
 
 *,
@@ -47,13 +51,17 @@ body {
 *::after {
   transition: background-color var(--transition-theme),
     border-color var(--transition-theme),
-    box-shadow var(--transition-theme);
+    color 0.2s ease;
 }
 
 a {
-  transition: color 0.2s ease;
+  text-decoration: none;
 }
 
-a:hover {
-  color: var(--accent-hover);
+.font-heading {
+  font-family: var(--font-heading) !important;
+}
+
+.font-body {
+  font-family: var(--font-body) !important;
 }

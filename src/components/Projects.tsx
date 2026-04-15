@@ -51,37 +51,38 @@ export default function Projects() {
   const { lang } = useLanguage();
 
   return (
-    <section className="py-12 border-b border-[var(--border-subtle)]">
-      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
-        <Icon icon="mingcute:folder-line" width={18} />
-        {texts[lang].title}
-      </h2>
+    <section>
+      <div className="flex flex-col gap-8">
+        <h2 className="text-2xl md:text-3xl font-heading tracking-tight text-[var(--text-primary)]">
+          {texts[lang].title}
+        </h2>
 
-      <div className="space-y-6">
-        {projects.map((project, index) => (
-          <div key={project.name}>
-            <div className="group">
-              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-1">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] font-medium hover:text-[var(--accent-hover)] transition-colors flex items-center gap-1 hover:underline underline-offset-4 decoration-[var(--border)]"
-                >
-                  {project.name}
-                  <Icon icon="mingcute:arrow-right-up-line" width={14} className="text-[var(--text-muted)] group-hover:text-[var(--accent-hover)] transition-colors" />
-                </a>
-                <span className="text-xs text-[var(--text-muted)]">{project.tech}</span>
+        <div className="flex flex-col border-t border-[var(--border)] pt-8">
+          <div className="grid grid-cols-1 gap-12">
+            {projects.map((project) => (
+              <div key={project.name} className="flex flex-col gap-2">
+                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-6">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-lg md:text-xl font-heading text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
+                  >
+                    {project.name}
+                    <Icon icon="bx:link-external" width={14} className="shrink-0 opacity-50" />
+                  </a>
+                  <span className="text-[11px] font-mono text-[var(--text-muted)] uppercase tracking-widest shrink-0">
+                    {project.tech}
+                  </span>
+                </div>
+                <p className="text-[15px] font-body font-light text-[var(--text-secondary)] leading-relaxed max-w-xl">
+                  {texts[lang][project.descKey]}
+                </p>
+                <div className="h-px bg-[var(--border-subtle)] mt-8 w-full block md:hidden"></div>
               </div>
-              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                {texts[lang][project.descKey]}
-              </p>
-            </div>
-            {index < projects.length - 1 && (
-              <div className="mt-6 h-px bg-gradient-to-r from-transparent via-[var(--border)] to-transparent" />
-            )}
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

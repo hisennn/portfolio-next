@@ -23,7 +23,7 @@ const texts = {
 const experiences = [
   {
     company: 'Baltimore Re-Construction',
-    role: { pt: 'Assistente Criativo e Operacional', en: 'Creative & Operations Assistant' },
+    role: { pt: 'Assistente Operacional', en: 'Operations Assistant' },
     date: { pt: 'out 2025 - presente', en: 'oct 2025 - present' },
     items: {
       pt: [
@@ -85,53 +85,48 @@ export default function Experience() {
   const { lang } = useLanguage();
 
   return (
-    <section className="py-12 border-b border-[var(--border-subtle)]">
-      <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-6 flex items-center gap-2">
-        <Icon icon="mingcute:briefcase-line" width={18} />
-        {texts[lang].title}
-      </h2>
+    <section>
+      <div className="flex flex-col gap-8">
+        <h2 className="text-2xl md:text-3xl font-heading tracking-tight text-[var(--text-primary)]">
+          {texts[lang].title}
+        </h2>
 
-      <div className="space-y-8">
-        {experiences.map((exp, index) => (
-          <div key={exp.company}>
-            <div className="flex flex-col gap-1 mb-3">
-              <div className="flex items-baseline gap-2 flex-wrap">
-                <span className="text-[var(--text-primary)] font-medium">{exp.company}</span>
-                <span className="text-[var(--text-muted)]">·</span>
-                <span className="text-sm text-[var(--text-secondary)]">{exp.role[lang]}</span>
-              </div>
-              <div className="flex items-center gap-2 flex-wrap text-xs text-[var(--text-muted)]">
-                {exp.date && <span>{exp.date[lang]}</span>}
-                {exp.locationDetails && (
-                  <>
-                    <span>·</span>
-                    <span className="flex items-center gap-1">
-                      <Icon icon="mingcute:location-line" width={12} />
-                      {exp.locationDetails[lang]}
-                    </span>
-                  </>
-                )}
-                {'type' in exp && exp.type && (
-                  <>
-                    <span>·</span>
-                    <span className="lowercase first-letter:uppercase">{texts[lang][exp.type]}</span>
-                  </>
+        <div className="flex flex-col divide-y divide-[var(--border)] border-t border-[var(--border)] pt-2">
+          {experiences.map((exp, index) => (
+            <div key={exp.company} className="flex flex-col gap-3 py-8 group">
+              <div className="flex flex-col gap-1">
+                <h3 className="text-lg md:text-xl font-heading text-[var(--text-primary)] tracking-tight">
+                  {exp.role[lang]}
+                </h3>
+
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-[15px] font-mono text-[var(--accent)]">@ {exp.company}</span>
+                  <span className="text-xs font-mono uppercase tracking-[0.05em] text-[var(--text-secondary)] shrink-0 whitespace-nowrap">
+                    {exp.date ? exp.date[lang] : ''}
+                  </span>
+                </div>
+
+                {(exp.locationDetails || ('type' in exp && exp.type)) && (
+                  <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-[var(--text-muted)]">
+                    {exp.locationDetails && <span>{exp.locationDetails[lang]}</span>}
+                    {exp.locationDetails && 'type' in exp && exp.type && (
+                      <span className="text-[var(--text-muted)]">/</span>
+                    )}
+                    {'type' in exp && exp.type && <span>{texts[lang][exp.type]}</span>}
+                  </div>
                 )}
               </div>
+
+              <ul className="text-[15px] font-body font-light text-[var(--text-secondary)] leading-relaxed space-y-2 mt-2 list-disc list-outside ml-4 marker:text-[var(--text-muted)]">
+                {exp.items[lang].map((item, i) => (
+                  <li key={i} className="pl-1">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="space-y-1.5 text-sm text-[var(--text-secondary)]">
-              {exp.items[lang].map((item, i) => (
-                <li key={i} className="flex gap-2">
-                  <span className="text-[var(--text-muted)] shrink-0">–</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            {index < experiences.length - 1 && (
-              <div className="mt-8 h-px bg-gradient-to-r from-transparent via-[var(--border)] to-transparent" />
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
